@@ -6,7 +6,7 @@ from collections import deque
 
 pygame.init()
 
-# ─── Screen / Layout ──────────────────────────────────────────────────────────
+# ─── Screen / Layout ────────────────────────────────────────────────────────
 SCREEN_W, SCREEN_H = 1100, 720
 PANEL_X  = 760
 PANEL_W  = SCREEN_W - PANEL_X
@@ -15,7 +15,7 @@ ROAD_W   = 130          # wider road = more zoomed-in look
 CX       = PANEL_X // 2
 CY       = SCREEN_H // 2
 
-# ─── Colours ──────────────────────────────────────────────────────────────────
+# ─── Colours ────────────────────────────────────────────────────────────────
 ASPHALT_COLOR   = (52, 52, 58)
 ROAD_COLOR      = (38, 38, 44)
 BG_COLOR        = (45, 100, 45)
@@ -42,7 +42,7 @@ FPS            = 60
 AI_INTERVAL    = 2.0
 FIRST_AI_DELAY = 5.0
 
-# ─── Heuristic ────────────────────────────────────────────────────────────────
+# ─── Heuristic ──────────────────────────────────────────────────────────────
 def heuristic_score(lane):
     vc   = lane.vehicle_count
     wt   = lane.avg_waiting_time()
@@ -50,7 +50,7 @@ def heuristic_score(lane):
     emrg = 1 if lane.emergency_present else 0
     return 0.4*vc + 0.3*wt + 0.2*ar + 10*emrg
 
-# ─── Vehicle ──────────────────────────────────────────────────────────────────
+# ─── Vehicle ────────────────────────────────────────────────────────────────
 class Vehicle:
     def __init__(self, direction, is_emergency=False):
         self.direction    = direction
